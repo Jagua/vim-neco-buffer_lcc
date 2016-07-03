@@ -1,0 +1,93 @@
+*neco-buffer_lcc.txt*  neco source: buffer_lcc
+
+Version: 0.1.0
+Author: Jagua
+License: MIT License
+
+
+
+==============================================================================
+INTRODUCTION                                    *neco-buffer_lcc-introduction*
+
+|neco-buffer_lcc| are sources for |deoplete|, |neocomplete| and |neocomplcache|.
+These are similar to their "buffer" (or "buffer_complete") source, but
+"buffer_lcc" collects keywords, converted complete words to lower camel case.
+
+
+Requirements:
+- Vim
+
+Optionals:
+- |deoplete|
+- |neocomplete|
+- |neocomplcache|
+
+Latest version:
+https://github.com/Jagua/vim-neco-buffer_lcc
+
+
+
+==============================================================================
+SOURCES                                              *neco-buffer_lcc-sources*
+
+buffer_lcc
+        keywords from buffer, converted to lower camel case
+
+        deoplete.nvim                       *neco-buffer_lcc-sources-deoplete*
+                This source does not depend on other sources.
+
+        neocomplete.vim                  *neco-buffer_lcc-sources-neocomplete*
+                This source depends on "buffer" source.
+                "buffer_lcc" must be set after "buffer".
+
+        neocomplcache.vim              *neco-buffer_lcc-sources-neocomplcache*
+                This source depends on "buffer" source.
+                "buffer_lcc" must be set after "buffer_complete".
+
+
+
+==============================================================================
+EXAMPLES                                            *neco-buffer_lcc-examples*
+
+------------------------------------------------------------------------------
+deoplete.nvim                              *neco-buffer_lcc-examples-deoplete*
+
+>
+  let g:deoplete#sources = get(g:, 'deoplete#sources' ,{})
+
+  " for Java
+  let g:deoplete#sources.java = ['buffer', 'buffer_lcc']
+<
+
+------------------------------------------------------------------------------
+neocomplete.vim                         *neco-buffer_lcc-examples-neocomplete*
+
+>
+  let g:neocomplete#sources = get(g:, 'neocomplete#sources', {})
+
+  " for Java (require 'buffer' before 'buffer_lcc')
+  let g:neocomplete#sources.java = ['buffer', 'buffer_lcc']
+<
+
+------------------------------------------------------------------------------
+neocomplcache.vim                     *neco-buffer_lcc-examples-neocomplcache*
+
+>
+  let g:neocomplcache_sources_list = get(g:, 'neocomplcache_sources_list', {})
+
+  " for Java (require 'buffer_complete' before 'buffer_lcc')
+  let g:neocomplcache_sources_list.java = ['buffer_complete', 'buffer_lcc']
+<
+
+
+
+==============================================================================
+CHANGELOG                                          *neco-buffer_lcc-changelog*
+
+0.1.0  2016-07-04
+       - Initial version.
+
+
+
+==============================================================================
+vim:tw=78:ts=8:sw=2:ft=help:et:norl:fen:fdl=0:

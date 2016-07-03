@@ -1,0 +1,52 @@
+# vim-neco-buffer_lcc
+
+
+**vim-neco-buffer_lcc** is a Vim plugin. This plugin consists of some sources for deoplete.nvim, neocomplete.vim and neocomplcache.vim to provide keywords, converted to lower camel case.
+
+
+This plugin depends on:
+
+* [Shougo/deoplete.nvim](https://github.com/Shougo/deoplete.nvim) (Optional)
+* [Shougo/neocomplete.vim](https://github.com/Shougo/neocomplete.vim) (Optional)
+* [Shougo/neocomplcache.vim](https://github.com/Shougo/neocomplcache.vim) (Optional)
+
+Latest: https://github.com/Jagua/vim-neco-buffer_lcc
+
+
+## Abstract
+
+* Typing `Context`, `buffer_lcc` adds `context` to complete words as a candidate.
+* Typing `MySubClass`, `buffer_lcc` adds `mySubClass` to complete words as a candidate.
+
+
+## .vimrc
+
+
+### deoplete.nvim
+
+```vim
+let g:deoplete#sources = get(g:, 'deoplete#sources' ,{})
+
+" for Java
+let g:deoplete#sources.java = ['buffer', 'buffer_lcc']
+```
+
+
+### neocomplete.vim
+
+```vim
+let g:neocomplete#sources = get(g:, 'neocomplete#sources', {})
+
+" for Java (require 'buffer' before 'buffer_lcc')
+let g:neocomplete#sources.java = ['buffer', 'buffer_lcc']
+```
+
+
+### neocomplcache.vim
+
+```vim
+let g:neocomplcache_sources_list = get(g:, 'neocomplcache_sources_list', {})
+
+" for Java (require 'buffer_complete' before 'buffer_lcc')
+let g:neocomplcache_sources_list.java = ['buffer_complete', 'buffer_lcc']
+```
