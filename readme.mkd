@@ -6,9 +6,9 @@
 
 This plugin depends on:
 
-* [Shougo/deoplete.nvim](https://github.com/Shougo/deoplete.nvim) (Optional)
-* [Shougo/neocomplete.vim](https://github.com/Shougo/neocomplete.vim) (Optional)
-* [Shougo/neocomplcache.vim](https://github.com/Shougo/neocomplcache.vim) (Optional)
+* [deoplete.nvim](https://github.com/Shougo/deoplete.nvim) (Optional)
+* [neocomplete.vim](https://github.com/Shougo/neocomplete.vim) (Optional)
+* [neocomplcache.vim](https://github.com/Shougo/neocomplcache.vim) (Optional)
 
 Latest: https://github.com/Jagua/vim-neco-buffer_lcc
 
@@ -25,7 +25,7 @@ Latest: https://github.com/Jagua/vim-neco-buffer_lcc
 ### deoplete.nvim
 
 ```vim
-let g:deoplete#sources = get(g:, 'deoplete#sources' ,{})
+let g:deoplete#sources = get(g:, 'deoplete#sources', {})
 
 " for Java
 let g:deoplete#sources.java = ['buffer', 'buffer_lcc']
