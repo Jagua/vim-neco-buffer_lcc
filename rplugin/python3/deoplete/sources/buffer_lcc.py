@@ -15,8 +15,7 @@ class Source(Base):
         candidates = []
         keywords = parse_buffer_pattern(
             self.vim.current.buffer,
-            context['keyword_patterns'],
-            context['complete_str'])
+            context['keyword_patterns'])
         for keyword in keywords:
             matches = re.findall('([A-Z][a-z]+)', keyword)
             if len(matches) > 0:
