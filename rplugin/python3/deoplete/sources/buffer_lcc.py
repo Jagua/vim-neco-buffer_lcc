@@ -14,9 +14,12 @@ class Source(Base):
     def gather_candidates(self, context):
         candidates = []
         pattern = re.compile('([A-Z][a-z]+)')
+        keyword_pattern = self.vim.call(
+                'deoplete#util#get_keyword_pattern',
+                context['filetype'], self.keyword_patterns)
         keywords = parse_buffer_pattern(
             self.vim.current.buffer,
-            context['keyword_patterns'])
+            keyword_pattern)
         for keyword in keywords:
             matches = re.findall(pattern, keyword)
             if len(matches) > 0:
